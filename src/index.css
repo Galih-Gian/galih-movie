@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+
+@layer base{
+body{
+  font-family: "Bebas Neue", sans-serif;
+  font-style: normal;
+}
+li .active{
+  color: blueviolet;
+  background-color: blue;
+}
+html{
+  scroll-behavior: smooth;
+}
+}
