@@ -62,7 +62,7 @@ const[short, setShort]=useState({
       {/* top header awal */}
      <div className="mt-20 pb-5">
         <div className="flex justify-between px-2 border-b-2 border-white pb-5">
-        <div className="flex justify-center items-center gap-3">
+        <div className="flex flex-wrap justify-start items-center gap-3">
           <GroupFilter minRating={minRating} ratings={[8,7,6]} onRateFilter={handleFilter} />
 
           <select name="by" id="" className="text-lg p-2  text-slate-200 bg-slate-600 rounded-md" onChange={handleShort} value={short.by}>
@@ -75,20 +75,16 @@ const[short, setShort]=useState({
             <option value="desc">Descending</option>
             
           </select>
+           <input type="text" name="cari" className="bg-slate-400 py-2 px-4 rounded-lg font-medium text-lg" autoComplete="off" placeholder="cari film favorit anda" onChange={searchFilter}  />
         </div>
-        <div className="">
-        <div className="flex justify-end px-2 gap-3 items-center">
-          <input type="text" name="cari" className="bg-slate-400 py-2 px-4 rounded-lg font-medium text-lg" autoComplete="off" placeholder="cari film favorit anda" onChange={searchFilter}  />
-        </div>
-      </div>
         </div>
       </div>
       {/* top header akhir */}
 
       {/* konten awal */}
     <div className="mt-22 mb-5">
-    <h1 id={id} className="text-6xl mt-20 mb-10">{title}</h1>
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-col-4 lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4 lg:gap-5">
+    <h1 id={id} className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl mt-20 mb-10 px-2">{title}</h1>
+    <div className="grid grid-cols-1 justify-items-center sm:grid-cols-3 md:grid-col-4 lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4 lg:gap-5">
       {filterMovies.map((movie)=>(
             <div key={movie.id}>
             <a href={`https://www.themoviedb.org/movie/${movie.id}`} target="blank">
